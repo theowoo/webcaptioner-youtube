@@ -1,7 +1,11 @@
-# webcaptioner-stream
+# webcaptioner-youtube
 
-A way to stream caption requests from Web Captioner to your terminal.
+Stream caption requests from Web Captioner to YouTube Live by combining [jlacson/webcaptioner-stream](https://github.com/jlacson/webcaptioner-stream) and [this answer from Nattawu](https://stackoverflow.com/a/61682354).
 A really rough POC!
+
+## Configuration
+
+Edit `stream.py`, change the variable `STREAM_KEY` to your YouTube stream key (`xxxx-xxxx-xxxx-xxxx`).
 
 ## Environment Set Up
 
@@ -40,10 +44,14 @@ and make sure you see the "Hello World!" page. If you can see that, you've prope
 told Chrome to allow insecure requests to content on `localhost`.
 
 After that, go to `https://webcaptioner.com/captioner/settings/webhooks` 
-and for the URL enter `https://localhost:9999/transcribe`. 
+and for the URL enter `https://localhost:9999/transcribe` (Method: `POST`)
 
-## Future Plans
+## YouTube Live Setup
 
-[ ] Make server properly HTTPS compliant (with legit certs)
+In YouTUbe Live Control Room, turn on Closed captions and set it to `POST Captions to URL`.
 
-[ ] Dockerize scripts
+![YouTube Stream Settings](./youtube_cc.png)
+
+## Demo
+
+[https://www.youtube.com/watch?v=o463utJpEH0](https://www.youtube.com/watch?v=o463utJpEH0)
